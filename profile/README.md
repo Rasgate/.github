@@ -4,15 +4,15 @@
 
 ### High-Throughput, Sub-18ms Push Gateway & Native Client SDKs for Apple, Android & Web
 
-[![Swift 5.9+](https://img.shields.io/badge/Swift-5.9+-FA7343.svg?style=for-the-badge&logo=swift&logoColor=white)](https://github.com/rasgate/rasgate-ios-sdk)
-[![Kotlin 1.9+](https://img.shields.io/badge/Kotlin-1.9+-7F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/rasgate/rasgate-android-sdk)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://rasgate.io/docs/web-api)
+[![Swift 5.9+](https://img.shields.io/badge/Swift-5.9+-FA7343.svg?style=for-the-badge&logo=swift&logoColor=white)](https://github.com/rasgate/ios)
+[![Kotlin 1.9+](https://img.shields.io/badge/Kotlin-1.9+-7F52FF.svg?style=for-the-badge&logo=kotlin&logoColor=white)](https://github.com/rasgate/android)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white)](https://github.com/rasgate/web)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14+-4169E1.svg?style=for-the-badge&logo=postgresql&logoColor=white)](https://postgresql.org)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-0071E3.svg?style=for-the-badge)](LICENSE)
 
 <br/>
 
-[🚀 Explore Free Sandbox](https://rasgate.io) • [📚 Developer Documentation](https://rasgate.io/docs) • [🍏 iOS SDK](https://github.com/rasgate/rasgate-ios-sdk) • [🤖 Android SDK](https://github.com/rasgate/rasgate-android-sdk) • [🌐 REST API](https://rasgate.io/docs/web-api)
+[🚀 Explore Free Sandbox](https://rasgate.io) • [📚 Developer Documentation](https://rasgate.io/docs) • [🍏 iOS SDK](https://github.com/rasgate/ios) • [🤖 Android SDK](https://github.com/rasgate/android) • [🌐 Web SDK](https://github.com/rasgate/web) • [⚙️ Server SDKs](https://github.com/rasgate/server)
 
 <br/>
 
@@ -49,10 +49,10 @@
 
 | Repository | Platform | Distribution Channel | Version | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| [**`rasgate-ios-sdk`**](https://github.com/rasgate/rasgate-ios-sdk) | Apple iOS 14.0+, iPadOS, macOS | **Swift Package Manager (SPM)** & Universal XCFramework | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
-| [**`rasgate-android-sdk`**](https://github.com/rasgate/rasgate-android-sdk) | Android 5.0+ (API 21+) | **Maven Central** (`io.rasgate:sdk`) & AAR Binary | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
-| [**`rasgate-web-sdk`**](https://github.com/rasgate/rasgate-web-sdk) | Modern Browsers & PWAs | **NPM** (`@rasgate/web-push`) & CDN Script | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
-| [**`rasgate-server-sdks`**](https://github.com/rasgate/rasgate-sdks) | Node.js, Python, Go, PHP | Packagist, PyPI, Go Modules | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
+| [**`rasgate/ios`**](https://github.com/rasgate/ios) | Apple iOS 14.0+, iPadOS, macOS | **Swift Package Manager (SPM)** & Universal XCFramework | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
+| [**`rasgate/android`**](https://github.com/rasgate/android) | Android 5.0+ (API 21+) | **Maven Central** (`io.rasgate:sdk`) & AAR Binary | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
+| [**`rasgate/web`**](https://github.com/rasgate/web) | Modern Browsers & PWAs | **NPM** (`@rasgate/web-push`) & CDN Script | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
+| [**`rasgate/server`**](https://github.com/rasgate/server) | Node.js, Python, Go, PHP | Packagist, PyPI, Go Modules | `v2.4.0` | ![Build](https://img.shields.io/badge/Status-Active-brightgreen.svg?style=flat-square) |
 
 ---
 

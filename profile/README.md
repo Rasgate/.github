@@ -25,6 +25,7 @@
 
 - ⚡ **Fast-Path Delivery**: Sub-18ms delivery across Apple APNs and Google FCM.
 - 📱 **Native Mobile SDKs**: Idiomatic Swift (SPM) and Kotlin (Maven) client libraries.
+- ⚙️ **Config-Driven Initialization**: Automated configuration loading via `Rasgate-Info.plist` (iOS) and `rasgate-services.json` / XML (Android).
 - 🛡️ **End-to-End Security**: Encrypted credential storage and HMAC request verification.
 - 💰 **Predictable Pricing**: Flat-rate volume scaling with zero per-subscriber penalty fees.
 
@@ -33,21 +34,29 @@
 ## 📱 Mobile SDKs
 
 ### 🍏 [iOS SDK (`rasgate/ios`)](https://github.com/rasgate/ios)
-Native Swift SDK with Swift Package Manager (SPM) support, automatic APNs token registration, and rich media notification extensions.
+Native Swift SDK with Swift Package Manager (SPM) support, automatic `Rasgate-Info.plist` configuration loading, and APNs token registration.
 
-```swift
-// Package.swift
-dependencies: [
-    .package(url: "https://github.com/rasgate/ios.git", from: "2.4.0")
-]
+#### 1. Add `Rasgate-Info.plist` to your Xcode project
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>API_KEY</key>
+    <string>rg_app_your_publishable_key</string>
+    <key>BASE_URL</key>
+    <string>https://api.rasgate.io</string>
+</dict>
+</plist>
 ```
 
+#### 2. Initialize in `AppDelegate.swift`
 ```swift
-// AppDelegate.swift
 import Rasgate
 
 func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    Rasgate.initialize(appKey: "rg_app_your_key")
+    // Automatically loads API_KEY and settings from Rasgate-Info.plist
+    Rasgate.initialize()
     return true
 }
 
@@ -59,27 +68,31 @@ func application(_ application: UIApplication, didRegisterForRemoteNotifications
 ---
 
 ### 🤖 [Android SDK (`rasgate/android`)](https://github.com/rasgate/android)
-Native Kotlin SDK with Maven Central distribution, Coroutines support, custom notification channels, and automatic FCM token synchronization.
+Native Kotlin SDK with Maven Central distribution, automated `rasgate-services.json` / XML discovery, and FCM token synchronization.
 
-```kotlin
-// build.gradle.kts
-dependencies {
-    implementation("io.rasgate:sdk:2.4.0")
+#### 1. Add `assets/rasgate-services.json` (or `res/values/strings.xml`)
+```json
+{
+  "api_key": "rg_app_your_publishable_key",
+  "base_url": "https://api.rasgate.io"
 }
 ```
+*Or in `res/values/strings.xml`:*
+```xml
+<resources>
+    <string name="rasgate_api_key">rg_app_your_publishable_key</string>
+</resources>
+```
 
+#### 2. Initialize in `MainApplication.kt`
 ```kotlin
-// MainApplication.kt
 import io.rasgate.sdk.Rasgate
-import io.rasgate.sdk.RasgateConfig
 
 class MainApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        Rasgate.initialize(
-            context = this,
-            config = RasgateConfig(apiKey = "rg_app_your_key")
-        )
+        // Automatically discovers rasgate-services.json or XML strings
+        Rasgate.initialize(context = this)
     }
 }
 ```
